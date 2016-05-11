@@ -49,10 +49,10 @@ create table item_days_njhs_store5 as select item_id,count(*) as days,sum(qty_al
 //计算每件商品14天的第五仓销量
 create table item_store5_njhs as select item_id,'5' as store_code,cast(round((njhs/days)*14) as int) as predict from item_days_njhs_store5;
 //将全国仓及其它五个仓的结果导出
-INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_all_njhs_ver2' row format delimited fields terminated by ',' select * from item_all_njhs;
-INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store1_njhs_ver2' row format delimited fields terminated by ',' select * from item_store1_njhs;
-INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store2_njhs_ver2' row format delimited fields terminated by ',' select * from item_store2_njhs;
-INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store3_njhs_ver2' row format delimited fields terminated by ',' select * from item_store3_njhs;
-INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store4_njhs_ver2' row format delimited fields terminated by ',' select * from item_store4_njhs;
-INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store5_njhs_ver2' row format delimited fields terminated by ',' select * from item_store5_njhs;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_all_njhs_ver3' row format delimited fields terminated by ',' select * from item_all_njhs;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store1_njhs_ver3' row format delimited fields terminated by ',' select * from item_store1_njhs;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store2_njhs_ver3' row format delimited fields terminated by ',' select * from item_store2_njhs;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store3_njhs_ver3' row format delimited fields terminated by ',' select * from item_store3_njhs;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store4_njhs_ver3' row format delimited fields terminated by ',' select * from item_store4_njhs;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store5_njhs_ver3' row format delimited fields terminated by ',' select * from item_store5_njhs;
 
