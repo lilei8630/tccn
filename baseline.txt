@@ -1,0 +1,14 @@
+create table item_all_njhs_ver2 as select item_id,'all' as store,cast(sum(qty_alipay_njhs) as int) as predict from item_feature where time >= 20151214 and time <= 20151227 group by item_id;
+create table item_store1_njhs_ver2 as select item_id,'1' as store,cast(sum(qty_alipay_njhs) as int) as predict from item_store1_feature where time >= 20151214 and time <= 20151227 group by item_id;
+create table item_store2_njhs_ver2 as select item_id,'2' as store,cast(sum(qty_alipay_njhs) as int) as predict from item_store2_feature where time >= 20151214 and time <= 20151227 group by item_id;
+create table item_store3_njhs_ver2 as select item_id,'3' as store,cast(sum(qty_alipay_njhs) as int) as predict from item_store3_feature where time >= 20151214 and time <= 20151227 group by item_id;
+create table item_store4_njhs_ver2 as select item_id,'4' as store,cast(sum(qty_alipay_njhs) as int) as predict from item_store4_feature where time >= 20151214 and time <= 20151227 group by item_id;
+create table item_store5_njhs_ver2 as select item_id,'5' as store,cast(sum(qty_alipay_njhs) as int) as predict from item_store5_feature where time >= 20151214 and time <= 20151227 group by item_id;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_all_njhs_ver4' row format delimited fields terminated by ',' select * from item_all_njhs_ver2;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store1_njhs_ver4' row format delimited fields terminated by ',' select * from item_store1_njhs_ver2;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store2_njhs_ver4' row format delimited fields terminated by ',' select * from item_store2_njhs_ver2;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store3_njhs_ver4' row format delimited fields terminated by ',' select * from item_store3_njhs_ver2;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store4_njhs_ver4' row format delimited fields terminated by ',' select * from item_store4_njhs_ver2;
+INSERT OVERWRITE LOCAL DIRECTORY '/home/bd/tianchi/res/item_store5_njhs_ver4' row format delimited fields terminated by ',' select * from item_store5_njhs_ver2;
+
+
